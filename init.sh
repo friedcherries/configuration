@@ -2,7 +2,7 @@
 
 echo Install all the apt components and any needed dependencies
 sudo apt install -y build-essential
-sudo apt install -y git kwrite 
+sudo apt install -y curl git kwrite 
 
 # Install tailscale
 app-installs/tailscale.sh login
