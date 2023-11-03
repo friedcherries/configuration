@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 echo Bring system completely up to date
-sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt-get -q update
+sudo apt-get -q upgrade -y
 
 echo Install all the apt components and any needed dependencies
-sudo apt-get install -y build-essential
-sudo apt-get install -y curl git kwrite 
+sudo apt-get -q install -y build-essential
+sudo apt-get -q install -y curl git kwrite 
 
 # Install tailscale
 app-installs/tailscale.sh login
