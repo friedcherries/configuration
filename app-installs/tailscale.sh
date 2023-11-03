@@ -2,12 +2,6 @@
 
 set -e
 
-if [ "" != "${1}" ]; then
-    LOGIN=1
-else
-    LOGIN=0
-fi
-
 which tailscale > /dev/null
 if [ $? -ne 0 ]; then
 
@@ -20,10 +14,7 @@ if [ $? -ne 0 ]; then
     echo Install Tailscale
     sudo apt-get -q update -y
     sudo apt-get -q install -y tailscale
-
-    if [ $LOGIN -eq 1 ]; then
-        sudo tailscale up
-    fi
+    sudo tailscale up
 else
     echo Tailscale already installed
 fi
