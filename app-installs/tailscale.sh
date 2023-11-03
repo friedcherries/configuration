@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-set -e
-
 which tailscale > /dev/null
 if [ $? -ne 0 ]; then
-
+    set -e
     source /etc/os-release
 
     echo Install Tailscale signing key and repository
