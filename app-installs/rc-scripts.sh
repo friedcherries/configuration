@@ -9,7 +9,7 @@ fi
 
 echo Install bashrc.d scripts
 mkdir -p ${HOME}/.bashrc.d
-scp hoth:deploye/homedir/.bashrc.d/* ${HOME}/.bashrc.d
+scp hoth:deploy/homedir/.bashrc.d/* ${HOME}/.bashrc.d
 cat >> ${HOME}/.bashrc <<- EOM
 for file in \$(ls \${HOME}/.bashrc.d/\*.bashrc); do
     source \${file};

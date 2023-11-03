@@ -8,16 +8,23 @@ else
     LOGIN=0
 fi
 
-source /etc/os-release
+CNT=$(which tailscale)
 
-echo Install Tailscale signing key and repository
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/${UBUNTU_CODENAME}.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/${UBUNTU_CODENAME}.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+if [ $CNT -ne 0 ]; then
 
-echo Install Tailscale
-sudo apt update -y
-sudo apt install -y tailscale
+    source /etc/os-release
 
-if [ $LOGIN -eq 1 ]; then
-    sudo tailscale up
+    echo Install Tailscale signing key and repository
+    curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/${UBUNTU_CODENAME}.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+    curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/${UBUNTU_CODENAME}.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+
+    echo Install Tailscale
+    sudo apt update -y
+    sudo apt install -y tailscale
+
+    if [ $LOGIN -eq 1 ]; then
+        sudo tailscale up
+    fi
+else
+    echo Tailscale already installed
 fi
