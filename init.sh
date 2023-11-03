@@ -12,7 +12,7 @@ sudo apt-get install -y curl git kwrite
 app-installs/tailscale.sh login
 
 # Install bashrc.d scripts
-app-installs/rc-scrips.sh
+app-installs/rc-scripts.sh
 
 # Install 1Password
 app-installs/1password.sh
