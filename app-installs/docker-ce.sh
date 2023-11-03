@@ -2,6 +2,8 @@
 
 set -e
 
+LATEST_SUPPORTED_UBUNTU=lunar
+
 if [ "" != "${1}" ]; then
     USER=${1}
 fi
@@ -19,7 +21,7 @@ else
 
     echo Add Docker Repository
     "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+    "${LATEST_SUPPORTED_UBUNTU}" stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt update -y
 
