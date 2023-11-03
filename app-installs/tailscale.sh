@@ -8,7 +8,7 @@ else
     LOGIN=0
 fi
 
-which tailscale > /dev/nullapg-
+which tailscale > /dev/null
 if [ $? -ne 0 ]; then
 
     source /etc/os-release
