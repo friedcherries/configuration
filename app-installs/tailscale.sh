@@ -12,7 +12,6 @@ if [ $? -ne 0 ]; then
     echo Install Tailscale
     sudo apt-get -q update -y
     sudo apt-get -q install -y tailscale
-    sudo tailscale up
 else
     echo Tailscale already installed
 fi
