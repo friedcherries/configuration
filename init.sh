@@ -23,11 +23,11 @@ app-installs/docker-ce.sh ${USER}
 # Install localstack
 app-installs/localstack.sh
 
+# Install Visual Studio Code
+app-installs/vscode.sh
+
 # Install nvm
 app-installs/nvm.sh
 
-# Install pyenv
+# Install pyenv - pyenv has to be last because of how the script functions
 app-installs/pyenv.sh
-
-# Install Visual Studio Code
-app-installs/vscode.sh
