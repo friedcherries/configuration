@@ -25,7 +25,6 @@ fi
 
 echo Install all the apt components and any needed dependencies
 sudo ${pkg_tool} install -y vim curl git kwrite
-exit
 
 # Install tailscale
 app-installs/tailscale.sh
