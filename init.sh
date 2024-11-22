@@ -13,14 +13,9 @@ elif [ "${ID}" == "ubuntu" ]; then
     sudo apt-get update -y
     sudo apt-get upgrade -y
     sudo apt-get install -y build-essential
-    sudo apt-get install -y vim curl git kwrite
 else
     echo "These scripts only support Fedora and Ubuntu"
     exit
-fi
-
-if [ "${ID}" == "ubunutu" ]; then
-    sudo ${pkg_tool} upgrade -y
 fi
 
 echo Install all the apt components and any needed dependencies
